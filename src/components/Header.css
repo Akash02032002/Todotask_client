@@ -1,0 +1,147 @@
+/* client/components/Header.css */
+
+.header {
+  background-color: #343a40; /* Darker background for header */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem; /* Consistent padding */
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative; /* Needed for absolute positioning of mobile menu */
+  z-index: 1000; /* Ensure header is on top */
+}
+
+.header > div h2 {
+  text-transform: uppercase;
+  color: #f8f9fa; /* Light text for title */
+  font-weight: 500;
+  font-size: 1.7rem; /* Slightly larger heading */
+  letter-spacing: 1px;
+}
+
+/* Desktop navigation links (visible by default) */
+.header > .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Space between links and button */
+}
+
+.header > .nav-links > a {
+  color: #f8f9fa; /* Light text for links */
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.header > .nav-links > a:hover {
+  color: #007bff; /* Primary blue on hover */
+}
+
+/* Specific styling for the logout button in header */
+.header > .nav-links > button.btn {
+  background-color: #007bff; /* Primary blue for button */
+  color: white;
+  padding: 0.6rem 1.2rem; /* Slightly smaller button for header */
+  font-size: 0.9rem;
+}
+
+.header > .nav-links > button.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  color: #f8f9fa; /* White color for icon */
+  font-size: 2rem; /* Large icon */
+  cursor: pointer;
+  z-index: 1001; /* Ensure button is above menu */
+  padding: 0;
+  line-height: 1; /* Align '☰' and '✕' better */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .header > div h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Hide desktop navigation and show mobile toggle */
+  .header > .nav-links {
+    display: none; /* Hide by default on mobile */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 100%; /* Position right below the header */
+    left: 0;
+    width: 100%;
+    background-color: #343a40; /* Same as header background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+    z-index: 999; /* Below header, above content */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    transform: translateY(-100%); /* Start off-screen */
+    opacity: 0; /* Make it invisible */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition */
+  }
+
+  .header > .nav-links.active {
+    display: flex; /* Show when active */
+    transform: translateY(0); /* Slide into view */
+    opacity: 1; /* Fade in */
+  }
+
+  .header > .nav-links > a,
+  .header > .nav-links > button.btn {
+    width: 100%; /* Make links/buttons full width of the menu */
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem; /* Larger font for mobile readability */
+    color: #f8f9fa; /* Ensure text color is light */
+    border-radius: 0; /* Remove border radius for full width buttons */
+    background: none; /* Remove button background initially */
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .header > .nav-links > button.btn {
+    background-color: #007bff; /* Give the logout/login button a background */
+    margin: 0.5rem auto; /* Center the button in the menu */
+    max-width: 80%; /* Don't let it stretch completely across */
+    border-radius: 5px; /* Re-apply radius for button */
+  }
+
+  .header > .nav-links > a:hover,
+  .header > .nav-links > button.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white; /* Ensure text remains white */
+  }
+
+  /* Show the mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 500px) {
+  .header > div h2 {
+    font-size: 1.3rem;
+  }
+  .mobile-menu-toggle {
+    font-size: 1.8rem;
+  }
+  .header > .nav-links > a,
+  .header > .nav-links > button.btn {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+}

@@ -1,0 +1,182 @@
+/* client/pages/Home.css */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100vh - 60px); /* Account for header height */
+  background-color: #f8f9fa; /* Consistent background */
+  box-sizing: border-box;
+}
+
+/* Styles for the "Add Task" form section */
+.add-task-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  max-width: 600px; /* Wider for task input */
+  width: 90%;
+  margin-bottom: 2rem; /* Space below the form */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.add-task-section > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Adjust this gap for the space between the input-group and the button */
+  gap: 2rem; /* Increased gap between input group and button */
+  width: 100%;
+}
+
+/* NEW: Styles for the input group wrapper */
+.add-task-section > form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Original gap for inputs */
+  width: 100%;
+}
+
+.add-task-section > form input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.add-task-section > form button {
+  background-color: #007bff;
+  color: white;
+  width: 100%;
+  max-width: 200px; /* Max width for Add Task button */
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.add-task-section > form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Styles for the "Todos Container" section */
+.todosContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align todos to the top */
+  align-items: center; /* Center todo items horizontally */
+  gap: 1.5rem; /* Space between individual TodoItem components */
+  width: 100%;
+  max-width: 900px; /* Max width for the list of todos */
+  padding: 0 0; /* No extra padding inside this container itself if todo items have padding */
+}
+
+/* Home heading (if you want one, was in app.scss) */
+.home-heading {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 2rem;
+  padding-top: 5vmax; /* Adjust as needed, based on header */
+}
+
+/* Home paragraph (if you want one, was in app.scss) */
+.home-paragraph {
+  margin: 1.5rem 0 2.5rem 0;
+  font-weight: 900;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 1.5rem;
+  }
+  .add-task-section {
+    padding: 2rem;
+    width: 95%;
+    margin-bottom: 1.5rem;
+  }
+  .add-task-section > form {
+    /* Adjusted gap for the input-group and button */
+    gap: 1.5rem;
+  }
+  /* NEW: Responsive adjustments for input-group */
+  .add-task-section > form .input-group {
+    gap: 1rem; /* Original gap for inputs */
+  }
+  .add-task-section > form input {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+  .add-task-section > form button {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+    max-width: 180px;
+  }
+  .todosContainer {
+    gap: 1.2rem;
+  }
+  .home-heading {
+    font-size: 2rem;
+    padding-top: 3vmax;
+  }
+  .home-paragraph {
+    font-size: 1rem;
+    margin: 1rem 0 2rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page {
+    padding: 1rem;
+  }
+  .add-task-section {
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
+  }
+  .add-task-section > form {
+    /* Adjusted gap for the input-group and button */
+    gap: 1.2rem;
+  }
+  /* NEW: Responsive adjustments for input-group */
+  .add-task-section > form .input-group {
+    gap: 0.8rem; /* Original gap for inputs */
+  }
+  .add-task-section > form input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .add-task-section > form button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    max-width: 150px;
+  }
+  .todosContainer {
+    gap: 1rem;
+  }
+  .home-heading {
+    font-size: 1.8rem;
+    padding-top: 2vmax;
+    margin-bottom: 1.5rem;
+  }
+  .home-paragraph {
+    font-size: 0.9rem;
+    margin: 0.8rem 0 1.5rem 0;
+  }
+}

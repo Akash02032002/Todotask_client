@@ -1,0 +1,120 @@
+/* client/pages/Register.css */
+
+/*
+  This file styles the Register page.
+  It shares many styles with the Login page.
+*/
+
+.register-page { /* Using a specific class to avoid conflict with .login */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Adjust for header height */
+  background-color: #f8f9fa; /* Consistent page background */
+  padding: 20px;
+}
+
+.register-page > section {
+  background-color: #ffffff; /* White background for the form container */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft, noticeable shadow */
+  padding: 2.5rem; /* Generous padding */
+  max-width: 450px; /* Max width for the form section */
+  width: 90%; /* Responsive width */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.register-page > section > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Space between form elements */
+  width: 100%;
+}
+
+.register-page > section > form input {
+  width: 100%;
+  padding: 1.1rem; /* Larger padding for inputs */
+  border: 1px solid #dee2e6;
+  border-radius: 8px; /* Slightly more rounded inputs */
+  font-size: 1.05rem; /* Slightly larger font */
+}
+
+.register-page > section > form button {
+  background-color: #007bff; /* Primary blue button */
+  color: white;
+  width: 100%;
+  max-width: 250px; /* Max width for the button */
+  padding: 1.1rem; /* Larger padding for button */
+  font-size: 1.1rem; /* Larger font for button */
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.register-page > section > form button:hover {
+  background-color: #0056b3;
+}
+
+.register-page > section > form h4 {
+  color: #6c757d; /* Muted text for "Or" */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+.register-page > section > form a {
+  color: #007bff;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .register-page > section {
+    padding: 2rem;
+    width: 95%;
+  }
+  .register-page > section > form input {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .register-page > section > form button {
+    padding: 1rem;
+    font-size: 1rem;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .register-page {
+    padding: 10px;
+    min-height: calc(100vh - 50px);
+  }
+  .register-page > section {
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+  .register-page > section > form {
+    gap: 1rem;
+  }
+  .register-page > section > form input {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+  .register-page > section > form button {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+    max-width: 180px;
+  }
+  .register-page > section > form h4,
+  .register-page > section > form a {
+    font-size: 0.9rem;
+  }
+}

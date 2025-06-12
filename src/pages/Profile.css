@@ -1,0 +1,47 @@
+/* client/pages/Profile.css */
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Account for header height */
+  background-color: #f8f9fa; /* Consistent background */
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-page h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.profile-page p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .profile-page h1 {
+    font-size: 2rem;
+  }
+  .profile-page p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-page {
+    padding: 10px;
+  }
+  .profile-page h1 {
+    font-size: 1.8rem;
+  }
+  .profile-page p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,221 @@
+/* client/components/TodoItem.css */
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  flex-wrap: nowrap; /* Prevent wrapping by default on larger screens */
+}
+
+.todo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.todo div:first-child {
+  flex-grow: 1;
+  margin-right: 20px;
+  word-break: break-word; /* Breaks long words if necessary */
+  overflow-wrap: break-word; /* Ensures long words wrap */
+}
+
+.todo h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.todo p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.todo div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between checkbox and buttons */
+  flex-shrink: 0; /* Prevent action buttons from shrinking */
+}
+
+.todo input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #007bff; /* Changes checkbox color in some browsers */
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap; /* Keep button text on one line */
+}
+
+.edit-btn {
+  background-color: #ffc107; /* Yellow */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.save-btn {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+/* --- User-Friendly Editing Section Styles --- */
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 10px 12px; /* Increased padding */
+  margin-bottom: 10px; /* Slightly increased margin */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Slightly more rounded corners */
+  font-size: 1.1em; /* Bigger font size for readability */
+  line-height: 1.5; /* Good line height for text */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for focus */
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Glow effect on focus */
+  outline: none; /* Remove default outline */
+}
+
+.edit-input {
+  resize: horizontal;
+  min-width: 150px; /* Increased min-height for description */
+  max-width: 200px; /* Optional: Set a max-height */
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 90px; /* Increased min-height for description */
+  max-height: 200px; /* Optional: Set a max-height */
+}
+
+
+/* --- Responsive Adjustments (from previous code, ensures new styles also adapt) --- */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .todo {
+    padding: 12px;
+  }
+
+  .todo h4 {
+    font-size: 1.1em;
+  }
+
+  .todo p {
+    font-size: 0.85em;
+  }
+
+  .btn {
+    padding: 7px 10px;
+    font-size: 0.85em;
+  }
+
+  .edit-input,
+  .edit-textarea {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding: 8px 10px;
+  }
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  .todo {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .todo div:first-child {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .todo div:last-child {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .todo input[type="checkbox"] {
+    margin-right: auto;
+  }
+
+  .btn {
+    padding: 8px 10px;
+    font-size: 0.85em;
+  }
+
+  .edit-input,
+  .edit-textarea {
+    font-size: 0.95em; /* Slightly smaller for mobile */
+    min-height: 70px; /* Adjusted min-height for mobile */
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  .todo {
+    padding: 10px;
+  }
+
+  .todo h4 {
+    font-size: 1em;
+  }
+
+  .todo p {
+    font-size: 0.8em;
+  }
+
+  .btn {
+    padding: 6px 8px;
+    font-size: 0.8em;
+  }
+
+  .todo div:last-child {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .todo input[type="checkbox"] {
+    margin-right: 10px;
+  }
+}
